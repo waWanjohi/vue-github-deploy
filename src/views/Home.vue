@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/">Home<router-link> | 
+    <router-link to="/suppliers">Suppliers<router-link> | 
+    <router-link to="/orders">Orders<router-link> | 
+    <router-link to="/product_suppliers">Product Suppliers<router-link>
+
+      <router-view>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<!-- <script>
+// // @ is an alias to /src
+// import ProductSuppliers from "@/components/suppliers/ProductSuppliers.vue";
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+// export default {
+//   name: "Home",
+//   components: {
+//     ProductSuppliers,
+//   },
+// };
+//
+</script> -->
