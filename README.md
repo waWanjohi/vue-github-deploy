@@ -1,4 +1,4 @@
-# pikdrive-vue
+# vue-github-deploy
 
 ## Project setup
 ```
