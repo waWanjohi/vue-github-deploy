@@ -1,26 +1,21 @@
 <template>
+  <h1><strong style="text-align: center">SUPPLIERS</strong></h1>
+  <router-link class="button is-center is-success" to="/new-supplier">Add Supplier</router-link>
+
   <div
-    class="card split is-dark"
-    v-for="supplier of suppliers"
-    :key="supplier.id"
+      class="card split is-dark is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+      v-for="supplier of suppliers"
+      :key="supplier.id"
   >
-    <header class="card-header">
       <h1 class="card-header-title">
-        Supplier Number: {{ supplier.supplierNumber }}
+        {{ supplier.name }}
       </h1>
-    </header>
-    <div class="card-content">
-      <div class="content">
-        <p>description: {{ supplier.description }}</p>
-        <time datetime="{{supplier.updated_at}}"
-          >supplier Created at: {{ supplier.created_at }}</time
-        >
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
+import "../../main.css"
+
 export default {
   name: "suppliers",
   data() {
@@ -33,14 +28,14 @@ export default {
     // Fetch products
 
     fetch(`${API_URL}/suppliers`)
-      .then((response) => response.json())
-      .then((supply) => {
-        this.suppliers = supply.data;
-        console.log("The Data:", supply.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+        .then((response) => response.json())
+        .then((supply) => {
+          this.suppliers = supply.data;
+          console.log("The Data:", supply.data);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
   },
 };
 </script>

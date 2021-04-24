@@ -1,8 +1,8 @@
 <template>
+  <h1><strong style="text-align: center">PRODUCTS</strong></h1>
+  <router-link class="button is-center is-success" to="/new-product">Add Product</router-link>
   <div class="card split" v-for="product of products" :key="product.id">
-    <header class="card-header">
       <h1 class="card-header-title">{{ product.name }}</h1>
-    </header>
     <div class="card-content">
       <div class="content">
         <p>{{ product.description }}</p>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import "../../main.css"
+
 export default {
   name: "App",
   data() {
